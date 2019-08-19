@@ -2,17 +2,9 @@ import random
 
 def ascSort(arr):
 
-  for i in range(0,99):
-    for j in range(0, 99-i):
-      if arr[j]>arr[j+1]:
-        arr[j], arr[j+1] = arr[j+1], arr[j]
+  for i in range(0, 98):
+    for j=i+1 in range(0, 99)
 
-def desSort(arr):
-
-  for i in range(0,99):
-    for j in range(0, 99-i):
-      if arr[j]<arr[j+1]:
-        arr[j], arr[j+1] = arr[j+1], arr[j]
 
 if __name__ == "__main__":
 
@@ -26,3 +18,4 @@ if __name__ == "__main__":
 
   desSort(arr)
   print("DESed Data\n{}\n".format(arr))
+
