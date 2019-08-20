@@ -49,22 +49,23 @@ void rightQuickSort(int* arr, int start, int end)
   int left = start;
   int right = end-1;
 
-  while (left <= right)
-  {
-    while(arr[left] < pivot) { left++; }
-    while(arr[right] > pivot) { right--; }
+  while (left <= right) {
 
-    if(left >= right) { swap(arr, left, right); }
+    while(arr[left] < pivot) { left++; } //값이 피봇보다 크거나 같으면 멈춤, 큰 값을 찾아감
+    while(arr[right] > pivot) { right--; } //값이 피봇보다 작거나 같으면 멈춤, 작은 값을 찾아감
 
-    if(start < end) {
-      swap(arr, left, end);
+    if(left <= right) { swap(arr, left, right); } //left가 right보다 작으면 스왑
+  }
+
+  if(start < end) { //시작이 끝보다 작으면
+
+      swap(arr, end, left);
 
       rightQuickSort(arr, start, left-1);
       rightQuickSort(arr, left+1, end);
     }
 
-    return;
-  }
+  return;
   
 }
 
@@ -75,7 +76,7 @@ int main()
 
   int arr1[CNT] = {5, 3, 7, 6, 2, 1, 4};
   int arr2[CNT] = {5, 3, 7, 6, 2, 1, 4};
-
+/*
   printf("Random Data: ");
   printArray(arr1, sizeof(arr1)/sizeof(int));
 
@@ -83,6 +84,7 @@ int main()
 
   printf("Sorted Data: ");
   printArray(arr1, sizeof(arr1)/sizeof(int));
+*/ 
 
   printf("Random Data: ");
   printArray(arr2, sizeof(arr2)/sizeof(int));
