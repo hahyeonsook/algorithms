@@ -1,7 +1,7 @@
 //https://blockdmask.tistory.com/177
 #include <stdio.h>
 
-#define CNT 7
+#define CNT 20
 
 void swap(int* arr, int a, int b)
 {
@@ -71,12 +71,12 @@ void rightQuickSort(int* arr, int start, int end)
 
 int main()
 {
-  //int arr1[CNT] = {5, 15, 7, 20, 1, 4, 10, 2, 8, 11, 9, 6, 13, 18, 3, 16, 12, 14, 17, 19};
-  //int arr2[CNT] = {5, 15, 7, 20, 1, 4, 10, 2, 8, 11, 9, 6, 13, 18, 3, 16, 12, 14, 17, 19};
-
+  int arr1[CNT] = {5, 15, 7, 20, 1, 4, 10, 2, 8, 11, 9, 6, 13, 18, 3, 16, 12, 14, 17, 19};
+  int arr2[CNT] = {5, 15, 7, 20, 1, 4, 10, 2, 8, 11, 9, 6, 13, 18, 3, 16, 12, 14, 17, 19};
+/*
   int arr1[CNT] = {5, 3, 7, 6, 2, 1, 4};
   int arr2[CNT] = {5, 3, 7, 6, 2, 1, 4};
-/*
+*/
   printf("Random Data: ");
   printArray(arr1, sizeof(arr1)/sizeof(int));
 
@@ -84,7 +84,6 @@ int main()
 
   printf("Sorted Data: ");
   printArray(arr1, sizeof(arr1)/sizeof(int));
-*/ 
 
   printf("Random Data: ");
   printArray(arr2, sizeof(arr2)/sizeof(int));
