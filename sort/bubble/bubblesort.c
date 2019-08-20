@@ -4,6 +4,12 @@
 
 #define CNT 20
 
+void swap(int *arr, int a, int b) {
+    int tmp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = tmp;
+}
+
 void printArray(int arr[], int cnt)
 {
   for(int i=0; i<cnt; i++) {
@@ -44,9 +50,7 @@ int main()
   for(int i=0; i<CNT-1; i++) {
     for(int j=0; j<CNT-1-i; j++) {
       if(data2[j]<data2[j+1]) {
-        temp = data2[j];
-        data2[j] = data2[j+1];
-        data2[j+1] = temp;
+        swap(data2, j, j+1);
       }
     }
   }
