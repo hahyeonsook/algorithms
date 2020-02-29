@@ -17,27 +17,27 @@ int main()
         cin >> tmp;
 
         if (i == 0)
-            cout << 0 << ' ';
+            ans += '0 ';
         else
         {
             for (int j = i - 1; j >= 0; j--)
             {
                 if (top[j] >= tmp)
                 {
-                    cout << j + 1 << ' ';
+                    ans += (j + 1) - '0' + ' ';
                     break;
                 }
                 else if (j == 0)
-                    cout << 0 << ' ';
+                    ans += '0 ';
             }
         }
         top[i] = tmp;
     }
-    cout << '\n';
+    cout << ans << '\n';
 }
 
 /**
  * 1. 시간초과  -> string ans에 답을 붙인 후 cout을 한번만 하는 방식으로 바꾸자 틀렸습니다.로 나옴.
  * 2. 반례 6 4 5 2 5 1 > 0 1 1 3 3 5(correct), 0 1 1 3 1 5(wrong), 탑의 크기가 같을 때도 수신할 수 있는 경우를 빼먹음.
- * 3. 시간초과
+ * 3. 시간초과 -> ans로 변경했더니 틀림.
  **/
