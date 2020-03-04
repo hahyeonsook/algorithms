@@ -1,14 +1,15 @@
+//https://www.acmicpc.net/problem/10973
 #include <iostream>
 using namespace std;
-bool next_permutation(int *a, int n)
+bool prev_permutation(int *a, int n)
 {
     int i = n - 1;
-    while (i > 0 && a[i - 1] >= a[i])
+    while (i > 0 && a[i - 1] <= a[i])
         i -= 1;
     if (i <= 0)
         return false;
     int j = n - 1;
-    while (a[j] <= a[i - 1])
+    while (a[j] >= a[i - 1])
         j -= 1;
     swap(a[i - 1], a[j]);
     j = n - 1;
@@ -29,7 +30,7 @@ int main()
     int a[n];
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    if (next_permutation(a, n))
+    if (prev_permutation(a, n))
     {
         for (int i = 0; i < n; i++)
             cout << a[i] << ' ';

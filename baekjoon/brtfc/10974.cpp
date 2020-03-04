@@ -1,31 +1,21 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
-bool c[8];
-int a[8], n;
-int g(int index)
-{
-    if (index == n)
-    {
-        for (int i = 0; i < n; i++)
-            cout << a[i] << ' ';
-        cout << '\n';
-    }
-    for (int i = 1; i <= n; i++)
-    {
-        if (c[i] == true)
-            continue;
-        a[index] = i;
-        c[i] = true;
-        g(index + 1);
-        c[i] = false;
-    }
-    return 0;
-}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+    int n;
     cin >> n;
-    g(0);
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
+        a[i] = i + 1;
+    do
+    {
+        for (int i = 0; i < n; i++)
+            cout << a[i] << ' ';
+        cout << '\n';
+    } while (next_permutation(a.begin(), a.end()));
     return 0;
 }
